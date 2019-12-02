@@ -1,6 +1,7 @@
 const pgPromise = require('pg-promise');
 const config = require('config');
 const Events = require('./Events');
+const Participants = require('./Participants');
 
 async function extractResult(dataExtractor) {
   let result = null;
@@ -28,6 +29,7 @@ const pgInitOptions = {
   extend(db) {
     const dbInstance = db;
     dbInstance.events = new Events(dbInstance, postgresPromiseInstance);
+    dbInstance.participants = new Participants(dbInstance, postgresPromiseInstance);
   },
 };
 

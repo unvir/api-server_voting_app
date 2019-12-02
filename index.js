@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const eventsEndpointHandler = require('./endpoints/events');
+const participantsEndpointHandler = require('./endpoints/participants');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use('/events', eventsEndpointHandler);
+app.use('/participants', participantsEndpointHandler);
 
 app.use((err, req, res) => {
   console.warn(err.stack);
