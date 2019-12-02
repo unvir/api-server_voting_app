@@ -21,4 +21,7 @@ module.exports = {
   participants: {
     SelectParticipants: getQueryFile('participants/SelectParticipants.sql'),
   },
+  scores: {
+    SelectScoredParticipants: getQueryFile('scores/SelectScoredParticipants.sql'),
+  },
 };
