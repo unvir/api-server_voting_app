@@ -11,6 +11,10 @@ app.use('/events', eventsEndpointHandler);
 app.use('/participants', participantsEndpointHandler);
 app.use('/scores', scoresEndpointHandler);
 
+app.use((req, res) => {
+  res.status(404).send('Oops! Incorrect url');
+});
+
 app.use((err, req, res) => {
   console.warn(err.stack);
   res.status(500).send('Oops! Something went wrong');
