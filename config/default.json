@@ -1,5 +1,0 @@
-{
-  "postgres": {
-    "uri": "postgres://votepad_webapi:webapi@localhost:5432/votepad" 
-  }
-}
