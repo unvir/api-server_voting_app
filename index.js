@@ -15,7 +15,7 @@ app.use((req, res) => {
   res.status(404).send('Oops! Incorrect url');
 });
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   console.warn(err.stack);
   res.status(500).send('Oops! Something went wrong');
 });
