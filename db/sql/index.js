@@ -15,6 +15,8 @@ function getQueryFile(file) {
 module.exports = {
   auth: {
     SelectUser: getQueryFile('auth/SelectUser.sql'),
+    InsertUser: getQueryFile('auth/InsertUser.sql'),
+    SelectUserByQuickPasswordAndEvent: getQueryFile('auth/SelectUserByQuickPasswordAndEvent.sql'),
   },
   events: {
     SelectFeatured: getQueryFile('events/SelectFeatured.sql'),
@@ -23,8 +25,10 @@ module.exports = {
   },
   participants: {
     SelectParticipants: getQueryFile('participants/SelectParticipants.sql'),
+    SelectParticipantsWithScores: getQueryFile('participants/SelectParticipantsWithScores.sql'),
   },
   scores: {
     SelectScoredParticipants: getQueryFile('scores/SelectScoredParticipants.sql'),
+    InsertScore: getQueryFile('scores/InsertScore.sql'),
   },
 };

@@ -10,7 +10,7 @@ class Participants {
     Extracting event participants
   */
   async getParticipants(eventId) {
-    return this.dbInstance.any(sql.SelectParticipants, {
+    return this.dbInstance.any(sql.SelectParticipantsWithScores, {
       eventId: parseInt(eventId, 10),
     });
   }

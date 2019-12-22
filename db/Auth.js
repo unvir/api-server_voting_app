@@ -20,6 +20,38 @@ class Auth {
     }
     return result;
   }
+
+  /*
+    Extracting user
+  */
+  async quickLogin(quickPassword, eventId) {
+    const result = await this.dbInstance.oneOrNone(sql.SelectUserByQuickPasswordAndEvent, {
+      quickPassword,
+      eventId,
+    });
+
+    if (!result) {
+      throw new Error('Invalid credentials');
+    }
+    return result;
+  }
+
+  /*
+    Create user
+  */
+  async createUser(login, password, fullName, quickPassword) {
+    const result = await this.dbInstance.one(sql.InsertUser, {
+      login,
+      password,
+      fullName,
+      quickPassword,
+    });
+
+    if (!result) {
+      throw new Error('Cannot create user');
+    }
+    return result;
+  }
 }
 
 module.exports = Auth;

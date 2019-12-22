@@ -14,6 +14,18 @@ class Scores {
       eventId: parseInt(eventId, 10),
     });
   }
+
+  /*
+    Put participant score
+  */
+  async putScore(eventId, participantId, userId, score) {
+    return this.dbInstance.any(sql.InsertScore, {
+      eventId,
+      participantId,
+      userId,
+      score,
+    });
+  }
 }
 
 module.exports = Scores;
