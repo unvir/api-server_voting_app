@@ -3,6 +3,7 @@ const config = require('config');
 const Events = require('./Events');
 const Participants = require('./Participants');
 const Scores = require('./Scores');
+const Auth = require('./Auth');
 
 async function extractResult(dataExtractor) {
   let result = null;
@@ -32,6 +33,7 @@ const pgInitOptions = {
     dbInstance.events = new Events(dbInstance, postgresPromiseInstance);
     dbInstance.participants = new Participants(dbInstance, postgresPromiseInstance);
     dbInstance.scores = new Scores(dbInstance, postgresPromiseInstance);
+    dbInstance.auth = new Auth(dbInstance, postgresPromiseInstance);
   },
 };
 

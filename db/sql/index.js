@@ -13,6 +13,9 @@ function getQueryFile(file) {
 }
 
 module.exports = {
+  auth: {
+    SelectUser: getQueryFile('auth/SelectUser.sql'),
+  },
   events: {
     SelectFeatured: getQueryFile('events/SelectFeatured.sql'),
     SelectEvent: getQueryFile('events/SelectEvent.sql'),
