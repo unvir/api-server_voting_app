@@ -4,4 +4,4 @@ VALUES
   (${eventId}, ${participantId}, ${userId}, ${score})
 ON CONFLICT ON CONSTRAINT "UNIQUE_Score"
 DO UPDATE
-  	SET "value" = ${score}
+    SET "value" = ${score}
