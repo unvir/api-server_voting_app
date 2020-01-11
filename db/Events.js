@@ -7,6 +7,15 @@ class Events {
   }
 
   /*
+    Extracting judges useid`s of event
+  */
+  async getJudges(eventId) {
+    return this.dbInstance.any(sql.SelectJudges, {
+      eventId: parseInt(eventId, 10),
+    });
+  }
+
+  /*
     Extracting user events list
   */
   async getFeatured(userId) {

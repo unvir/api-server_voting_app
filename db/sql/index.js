@@ -21,6 +21,7 @@ module.exports = {
   events: {
     SelectFeatured: getQueryFile('events/SelectFeatured.sql'),
     SelectEvent: getQueryFile('events/SelectEvent.sql'),
+    SelectJudges: getQueryFile('events/SelectJudges.sql'),
     InsertFeatured: getQueryFile('events/InsertFeatured.sql'),
   },
   participants: {
