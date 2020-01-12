@@ -16,6 +16,16 @@ class Scores {
   }
 
   /*
+    Extracting participants scores from judge
+  */
+  async getScoredParticipantsFromJudge(eventId, judgeId) {
+    return this.dbInstance.any(sql.SelectScoredParticipantsFromJudge, {
+      eventId: parseInt(eventId, 10),
+      judgeId: parseInt(judgeId, 10),
+    });
+  }
+
+  /*
     Put participant score
   */
   async putScore(eventId, participantId, userId, score) {

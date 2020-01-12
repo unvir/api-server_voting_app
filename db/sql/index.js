@@ -30,6 +30,7 @@ module.exports = {
   },
   scores: {
     SelectScoredParticipants: getQueryFile('scores/SelectScoredParticipants.sql'),
+    SelectScoredParticipantsFromJudge: getQueryFile('scores/SelectScoredParticipantsFromJudge.sql'),
     InsertScore: getQueryFile('scores/InsertScore.sql'),
   },
 };
